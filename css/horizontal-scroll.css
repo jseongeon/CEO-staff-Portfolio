@@ -1,0 +1,119 @@
+/* ==========================================
+   Core Competencies Section Styles
+   ========================================== */
+
+.core-competencies-section {
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.core-competencies-section .section-title {
+    padding-left: 60px;
+    margin-bottom: 60px;
+}
+
+.core-competencies-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 0 60px;
+    will-change: transform;
+}
+
+.core-competencies-item {
+    flex-shrink: 0;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.core-competencies-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out-expo);
+}
+
+.core-competencies-item:hover img {
+    transform: scale(1.1);
+}
+
+.core-competencies-item-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+}
+
+.core-competencies-item-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.core-competencies-item-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+}
+
+/* ==========================================
+   Skills Section Styles
+   ========================================== */
+
+.skills-section {
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.skills-section .section-title {
+    padding-left: 60px;
+    margin-bottom: 60px;
+}
+
+.skills-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 0 60px;
+    will-change: transform;
+}
+
+.skills-item {
+    flex-shrink: 0;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out-expo);
+}
+
+.skills-item:hover img {
+    transform: scale(1.1);
+}
+
+.skills-item-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+}
+
+.skills-item-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.skills-item-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+}

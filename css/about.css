@@ -1,0 +1,57 @@
+/* ==========================================
+   About Section Styles
+   ========================================== */
+
+.about {
+    padding: 200px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.about-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 30px;
+}
+
+.about-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+}
+
+.about-image {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out-expo);
+    will-change: transform;
+}
+
+.about-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Parallax Image Container */
+.parallax-img {
+    will-change: transform;
+}

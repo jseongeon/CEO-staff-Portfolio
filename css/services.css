@@ -1,0 +1,49 @@
+/* ==========================================
+   Resources Section Styles
+   ========================================== */
+
+.resources-section {
+    padding: 200px 60px;
+}
+
+.resources-list {
+    margin-top: 100px;
+}
+
+.resources-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 300px;
+    gap: 60px;
+    align-items: center;
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.resources-item:hover {
+    padding-left: 30px;
+}
+
+.resources-number {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.resources-name {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.resources-item:hover .resources-name {
+    color: var(--color-accent);
+}
+
+.resources-description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}

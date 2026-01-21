@@ -1,0 +1,22 @@
+/* ==========================================
+   CSS Variables & Root Styles
+   ========================================== */
+
+:root {
+    --color-bg: #0a0a0a;
+    --color-bg-secondary: #111111;
+    --color-text: #ffffff;
+    --color-text-muted: #888888;
+    --color-accent: #ff4d4d;
+    --color-accent-secondary: #4d4dff;
+    
+    /* Pretendard Font */
+    --font-display: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    
+    /* 기존 Google Fonts (주석처리 - 필요시 활성화) */
+    /* --font-display: 'Syne', sans-serif; */
+    /* --font-body: 'Space Grotesk', sans-serif; */
+    
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}

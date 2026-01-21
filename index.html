@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEONG SEONGEON'S PORTFOLIO</title>
+
+    <!-- Fonts -->
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <!-- 기존 Google Fonts (주석처리 - 필요시 활성화) -->
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    -->
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/marquee.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/horizontal-scroll.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/scroll-to-top.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-text">
+            <span>J</span><span>E</span><span>O</span><span>N</span><span>G</span><span>&nbsp;</span><span>S</span><span>E</span><span>O</span><span>N</span><span>G</span><span>&nbsp;</span><span>E</span><span>O</span><span>N</span><span>'</span><span>s</span><span>&nbsp;</span><br /><span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+        </div>
+        <div class="loader-progress">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">JEONG SEONG EON</div>
+        <ul class="nav-links">
+            <li><a href="#about" class="magnetic">Cover Letter</a></li>
+            <li><a href="#work" class="magnetic">Portfolio</a></li>
+            <li><a href="#services" class="magnetic">Resources</a></li>
+            <li><a href="#contact" class="magnetic">Contact</a></li>
+        </ul>
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <ul class="mobile-menu-links">
+            <li><a href="#about">Cover Letter</a></li>
+            <li><a href="#work">Portfolio</a></li>
+            <li><a href="#services">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-social">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-video-container" data-scroll-speed="0.5">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="line"><span>NO DOUBT</span></span>
+                <span class="line"><span>JUST DO IT</span></span>
+            </h1>
+            <p class="hero-subtitle">JEONG SEONGEON'S PORTFOLIO</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <span class="marquee-item" data-korean="데이터 분석">DATA ANALYTICS</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="전략 수립">STRATEGIC PLANNING</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="KPI 관리">KPI MANAGEMENT</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="기획">BUSINESS PLANNING</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="프로세스 개선">PROCESS OPTIMIZATION</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="자원 관리">RESOURCE MANAGEMENT</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="운영 효율화">OPERATIONAL EXCELLENCE</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="성과 관리">PERFORMANCE MGMT</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="프로젝트 관리">PROJECT MANAGEMENT</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="문제 정의">PROBLEM DEFINITION</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="커뮤니케이션">STRATEGIC COMM.</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="AI 활용">AI INTEGRATION</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="인적 관리">PEOPLE MANAGEMENT</span>
+            <span class="marquee-item">#</span>
+            <span class="marquee-item" data-korean="조직 협업">CROSS-FUNCTIONAL COLLAB.</span>
+            <span class="marquee-item">#</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content reveal">
+            <p class="about-label">Cover Letter</p>
+            <h2 class="about-title">대표의 의사결정을<br />데이터와 실행으로<br />뒷받침하는 정성언입니다.</h2>
+            <p class="about-text">
+                저는 조직의 성과를 개인의 노력에 의존하지 않고, 지속 가능한 구조로 개선하는 사람입니다.<br />
+                '군'이라는 특수한 조직에서 5년간 부사관으로 업무를 수행하며,<br />
+                상·하급자 간 이해관계를 조율하며 업무를 효율적으로 이끌기 위한 연구를 지속했으며,<br />
+                특허법인 테헤란에서 2년간 CEO staff (전략기획) 업무를 수행하며,<br />
+                “왜 수임율이 정체되는가”라는 경영진의 질문을 출발점으로 문제를 정의했습니다.
+            </p>
+        </div>
+        <div class="about-image reveal">
+            <img class="parallax-img" data-scroll-speed="-0.2" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" alt="Creative workspace">
+        </div>
+    </section>
+
+    <!--  Portfolio Section -->
+    <section class="projects" id="work">
+        <div class="section-header">
+            <h2 class="section-title reveal">Work Portfolio<br />&<br />Project Portfolio</h2>
+            <span class="section-count reveal">(08 Projects)</span>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card reveal" data-project="dashboard">
+                <img class="project-image" src="./img/dashboard.png" alt="데이터 대시보드 페이지 기획·제작">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">CEO Staff</p>
+                    <h3 class="project-name">데이터 대시보드 페이지 기획·제작</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="bill">
+                <img class="project-image" src="./img/bill.png" alt="고객청구서 UX 개선 기획·제작">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">CEO Staff</p>
+                    <h3 class="project-name">고객청구서 UX 개선 기획·제작</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="process">
+                <img class="project-image" src="./img/process.png" alt="업무 프로세스 개선 기획·실행">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">CEO Staff</p>
+                    <h3 class="project-name">업무 프로세스 개선 기획·실행</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="dataanalysis">
+                <img class="project-image" src="./img/dataanalysis.png" alt="데이터 분석·리포트 작성">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">CEO Staff</p>
+                    <h3 class="project-name">데이터 분석·리포트 작성</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="reminder">
+                <img class="project-image" src="./img/remiderapp.png" alt="리마인드 CRM 리타켓팅 앱 기획·제작">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">CEO Staff</p>
+                    <h3 class="project-name">리마인드 CRM 리타켓팅 앱 기획·제작</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="faq">
+                <img class="project-image" src="./img/datadashboard.png" alt="특허법인 자주묻는질문 FAQ 페이지 기획·제작">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">CEO Staff</p>
+                    <h3 class="project-name">특허법인 자주묻는질문 FAQ 페이지 기획·제작</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="kakaopay">
+                <img class="project-image" src="./img/kakakopay.png" alt="카카오페이 UI·UX 개선 기획">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">Project</p>
+                    <h3 class="project-name">카카오페이 UI·UX 개선 기획</h3>
+                </div>
+            </div>
+            <div class="project-card reveal" data-project="lottegiants">
+                <img class="project-image" src="./img/lottegiants.png" alt="롯데 자이언츠 3000만 관중 달성 이벤트 기획">
+                <div class="project-overlay"></div>
+                <div class="project-info">
+                    <p class="project-category">Project</p>
+                    <h3 class="project-name">롯데 자이언츠 3000만 관중 달성 이벤트 기획</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section class="core-competencies-section">
+        <h2 class="section-title reveal">Core Competencies</h2>
+        <div class="core-competencies-wrapper">
+            <div class="core-competencies-item">
+                <img src="img/Data-Analysis.png" alt="Data Analysis">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">데이터 분석</h3>
+                    <p class="core-competencies-item-desc">Data Analysis</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Strategy.png" alt="Strategy">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">전략수립</h3>
+                    <p class="core-competencies-item-desc">Strategy</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/KPI-Management.png" alt="KPI Management">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">KPI관리</h3>
+                    <p class="core-competencies-item-desc">KPI Management</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Business-Planning.png" alt="Business Planning">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">기획</h3>
+                    <p class="core-competencies-item-desc">Business Planning</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Process-Improvement.png" alt="Process Improvement">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">프로세스개선</h3>
+                    <p class="core-competencies-item-desc">Process Improvement</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Resource-Management.png" alt="Resource Management">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">자원관리</h3>
+                    <p class="core-competencies-item-desc">Resource Management</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Operational-Excellence.png" alt="Operational Excellence">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">운영효율화</h3>
+                    <p class="core-competencies-item-desc">Operational Excellence</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Performance-Management.png" alt="Performance Management">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">성과관리</h3>
+                    <p class="core-competencies-item-desc">Performance Management</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Project-Management.png" alt="Project Management">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">프로젝트관리</h3>
+                    <p class="core-competencies-item-desc">Project Management</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Problem-Definition-Solving.png" alt="Problem Definition & Solving">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">문제정의</h3>
+                    <p class="core-competencies-item-desc">Problem Definition & Solving</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Executive-Communication.png" alt="Executive Communication">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">커뮤니케이션</h3>
+                    <p class="core-competencies-item-desc">Executive Communication</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/AI-Automation.png" alt="AI Automation">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">AI 활용</h3>
+                    <p class="core-competencies-item-desc">AI Automation</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/People-Management.png" alt="People Management">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">인적관리</h3>
+                    <p class="core-competencies-item-desc">People Management</p>
+                </div>
+            </div>
+            <div class="core-competencies-item">
+                <img src="img/Cross-Functional-Collaboration.png" alt="Cross-Functional Collaboration">
+                <div class="core-competencies-item-info">
+                    <h3 class="core-competencies-item-title">조직협업</h3>
+                    <p class="core-competencies-item-desc">Cross-Functional Collaboration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <h2 class="section-title reveal">Skills</h2>
+        <div class="skills-wrapper">
+            <div class="skills-item">
+                <img src="img/SQL.png" alt="SQL">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">SQL</h3>
+                    <p class="skills-item-desc">Database Query Language</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/MySQL.png" alt="MySQL">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">MySQL</h3>
+                    <p class="skills-item-desc">Relational Database</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/GA.png" alt="Google Analytics">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">GA</h3>
+                    <p class="skills-item-desc">Google Analytics</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/GoogleSheets.png" alt="Google Sheets">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Google Sheets</h3>
+                    <p class="skills-item-desc">Spreadsheet Tool</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/HTML.png" alt="HTML">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">HTML</h3>
+                    <p class="skills-item-desc">Markup Language</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/CSS.png" alt="CSS">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">CSS</h3>
+                    <p class="skills-item-desc">Styling Language</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/JavaScript.png" alt="JavaScript">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">JavaScript</h3>
+                    <p class="skills-item-desc">Programming Language</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/Python.png" alt="Python">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Python</h3>
+                    <p class="skills-item-desc">Programming Language</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/Notion.png" alt="Notion">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Notion</h3>
+                    <p class="skills-item-desc">Workspace Tool</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/Figma.png" alt="Figma">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Figma</h3>
+                    <p class="skills-item-desc">Design Tool</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/GPT.png" alt="GPT">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">GPT</h3>
+                    <p class="skills-item-desc">Generative AI</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/Claude.png" alt="Claude">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Claude</h3>
+                    <p class="skills-item-desc">Generative AI</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/Gemini.png" alt="Gemini">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Gemini</h3>
+                    <p class="skills-item-desc">Generative AI</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/CURSOR.png" alt="CURSOR">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">CURSOR</h3>
+                    <p class="skills-item-desc">AI Code Editor</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/Org-Design-Mgmt.png" alt="Org Design & Mgmt">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">Org Design & Mgmt</h3>
+                    <p class="skills-item-desc">Organization Management</p>
+                </div>
+            </div>
+            <div class="skills-item">
+                <img src="img/OA.png" alt="OA">
+                <div class="skills-item-info">
+                    <h3 class="skills-item-title">OA</h3>
+                    <p class="skills-item-desc">Office Automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section" id="services">
+        <p class="about-label reveal">About Me</p>
+        <h2 class="section-title reveal">Resources</h2>
+        <div class="resources-list">
+            <div class="resources-item reveal">
+                <span class="resources-number">01</span>
+                <h3 class="resources-name" data-alternate="Resume">이력서</h3>
+                <p class="resources-description">We help brands find their voice and position in the market through strategic thinking.</p>
+            </div>
+            <div class="resources-item reveal">
+                <span class="resources-number">02</span>
+                <h3 class="resources-name" data-alternate="Career Description">경력기술서</h3>
+                <p class="resources-description">Creating immersive digital experiences that captivate and convert visitors.</p>
+            </div>
+            <div class="resources-item reveal">
+                <span class="resources-number">03</span>
+                <h3 class="resources-name" data-alternate="노션">Notion</h3>
+                <p class="resources-description">Building scalable, performant websites and applications with modern technologies.</p>
+            </div>
+            <div class="resources-item reveal">
+                <span class="resources-number">04</span>
+                <h3 class="resources-name" data-alternate="구글 드라이브">Google Drive</h3>
+                <p class="resources-description">Bringing brands to life through animation and interactive experiences.</p>
+            </div>
+            <div class="resources-item reveal">
+                <span class="resources-number">05</span>
+                <h3 class="resources-name" data-alternate="깃허브">Git Hub</h3>
+                <p class="resources-description">Bringing brands to life through animation and interactive experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-item reveal">
+            <div class="stat-number" data-target="7">0</div>
+            <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">CEO Staff</div>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-number" data-target="5">0</div>
+            <div class="stat-label">NCO(professional soldier)</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="contact-title reveal">
+            LET'S WORK
+            <span>TOGETHER</span>
+        </h2>
+        <button type="button" class="contact-btn magnetic reveal" id="openModalBtn">
+            <span>포지션 제안</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModalBtn" aria-label="닫기">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <h1 class="modal-title">Contact Me</h1>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">이름 / 회사명</label>
+                    <input type="text" id="name" name="name" placeholder="이름 또는 회사명을 말씀 부탁드립니다." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <div class="email-group">
+                        <input type="text" id="email-id" name="email-id" placeholder="example" required>
+                        <span>@</span>
+                        <input type="text" id="email-domain" name="email-domain" placeholder="email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">제안 포지션</label>
+                    <select id="department" name="department" required>
+                        <option value="CEO Staff" selected>CEO Staff</option>
+                        <option value="전략기획">전략기획</option>
+                        <option value="PM">PM</option>
+                        <option value="HR기획">HR기획</option>
+                        <option value="경영기획">경영기획</option>
+                        <option value="사업기획">사업기획</option>
+                        <option value="광고기획">광고기획</option>
+                        <option value="웹기획">웹기획</option>
+                        <option value="프로젝트협업">프로젝트협업</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="message" placeholder="제게 하시고 싶은 말씀이 있다면 말씀 부탁드립니다." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">제안하기</button>
+            </form>
+
+            <div class="social-links">
+                <a href="tel:" aria-label="전화">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
+                <a href="mailto:" aria-label="이메일">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="홈">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Notion">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 2.025c-.42-.326-.98-.7-2.055-.607L3.01 2.87c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.84-.046.933-.56.933-1.167V6.354c0-.606-.233-.933-.746-.886l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.886l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.747 0-.933-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.453-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.886.747-.933zM2.197 1.262l13.402-1.12c1.634-.14 2.054-.046 3.08.7l4.25 2.987c.7.513.933.653.933 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.961-.747l-3.127-4.06c-.56-.747-.793-1.306-.793-1.96V2.895c0-.84.374-1.54 1.354-1.633"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="magnetic">Google Drive</a>
+            <a href="#" class="magnetic">GitHub</a>
+            <a href="#" class="magnetic">E-mail</a>
+            <a href="#" class="magnetic">Instagram</a>
+        </div>
+        <p class="footer-copy">CEO staff<br />JEONG SEONGEON</p>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="project-modal-overlay" id="projectModal">
+        <div class="project-modal">
+            <button class="project-modal-close" id="projectModalClose">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="project-modal-image">
+                <img id="projectModalImage" src="" alt="">
+            </div>
+            <div class="project-modal-content">
+                <span class="project-modal-category" id="projectModalCategory"></span>
+                <h2 class="project-modal-title" id="projectModalTitle"></h2>
+                
+                <div class="project-modal-section">
+                    <h3 class="project-modal-section-title">프로젝트 배경</h3>
+                    <p class="project-modal-section-content" id="projectModalBackground"></p>
+                </div>
+                
+                <div class="project-modal-section">
+                    <h3 class="project-modal-section-title">주요 성과</h3>
+                    <ul class="project-modal-results" id="projectModalResults"></ul>
+                </div>
+                
+                <div class="project-modal-divider"></div>
+                
+                <div class="project-modal-buttons">
+                    <a href="#" class="project-modal-btn primary" id="projectModalWebsite" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        웹사이트 가기
+                    </a>
+                    <a href="#" class="project-modal-btn secondary" id="projectModalPdf" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        PDF 보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTopBtn" aria-label="맨 위로 이동">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/common.js"></script>
+    <script src="js/lenis-init.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/horizontal-scroll.js"></script>
+    <script src="js/stats-counter.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/velocity-skew.js"></script>
+    <script src="js/magnetic.js"></script>
+    <script src="js/smooth-navigation.js"></script>
+    <script src="js/text-scramble.js"></script>
+    <script src="js/marquee-animation.js"></script>
+    <script src="js/marquee-hover.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/scroll-to-top.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* ==========================================
+   Common Styles - 공통 스타일
+   ========================================== */
+
+/* ==========================================
+   Container System - 컨테이너 시스템
+   ========================================== */
+
+/* 기본 컨테이너 - 최대 폭 제한 + 중앙 정렬 */
+.container {
+    width: 100%;
+    max-width: min(1400px, 100% - 2rem);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 5vw, 4rem);
+}
+
+/* 좁은 컨테이너 - 텍스트 중심 콘텐츠용 */
+.container-narrow {
+    width: 100%;
+    max-width: min(900px, 100% - 2rem);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+/* 넓은 컨테이너 - 풀스크린에 가까운 레이아웃 */
+.container-wide {
+    width: 100%;
+    max-width: min(1600px, 100% - 2rem);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+/* 풀 와이드 - 패딩만 적용 */
+.container-fluid {
+    width: 100%;
+    padding-inline: clamp(1rem, 5vw, 4rem);
+}
+
+/* ==========================================
+   Responsive Spacing - 반응형 간격 시스템
+   ========================================== */
+
+/* 섹션 수직 패딩 - 반응형 */
+.section-spacing {
+    padding-block: clamp(80px, 12vw, 200px);
+}
+
+.section-spacing-sm {
+    padding-block: clamp(60px, 8vw, 150px);
+}
+
+.section-spacing-lg {
+    padding-block: clamp(100px, 15vw, 250px);
+}
+
+/* Section Label - 섹션 라벨 공통 스타일 */
+.section-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 30px;
+}
+
+/* Section Header - 섹션 헤더 공통 스타일 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+/* Section Title - 섹션 타이틀 공통 스타일 */
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 800;
+    line-height: 0.9;
+}
+
+/* Section Count - 섹션 카운트 공통 스타일 */
+.section-count {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.1em;
+}
+
+/* Section Padding - 섹션 공통 패딩 */
+.section-padding {
+    padding: 150px 60px;
+}
+
+.section-padding-lg {
+    padding: 200px 60px;
+}
+
+/* Image Hover Effect - 이미지 호버 효과 */
+.img-hover-zoom {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.img-hover-zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out-expo);
+    will-change: transform;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.1);
+}
+
+/* Card Base - 카드 기본 스타일 */
+.card-base {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Overlay Gradient - 오버레이 그라디언트 */
+.overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-base:hover .overlay-gradient {
+    opacity: 1;
+}
+
+/* Text Muted - 뮤트 텍스트 */
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+/* Text Accent - 액센트 텍스트 */
+.text-accent {
+    color: var(--color-accent);
+}
+
+/* Font Display - 디스플레이 폰트 */
+.font-display {
+    font-family: var(--font-display);
+}
+
+/* Font Body - 바디 폰트 */
+.font-body {
+    font-family: var(--font-body);
+}
+
+/* Background Secondary */
+.bg-secondary {
+    background: var(--color-bg-secondary);
+}
+
+/* Border Divider - 구분선 */
+.border-divider {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Uppercase Text - 대문자 텍스트 */
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Category Label - 카테고리 라벨 공통 */
+.category-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+/* Parallax Container */
+.parallax-container {
+    will-change: transform;
+}
+
+/* Transition Utilities */
+.transition-fast {
+    transition: all 0.3s ease;
+}
+
+.transition-normal {
+    transition: all 0.4s ease;
+}
+
+.transition-slow {
+    transition: all 0.5s var(--ease-out-expo);
+}
+
+/* Flex Utilities */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Grid Utilities */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Gap Utilities */
+.gap-sm {
+    gap: 20px;
+}
+
+.gap-md {
+    gap: 40px;
+}
+
+.gap-lg {
+    gap: 60px;
+}
+
+.gap-xl {
+    gap: 100px;
+}

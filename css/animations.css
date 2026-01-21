@@ -1,0 +1,32 @@
+/* ==========================================
+   Animation Styles
+   ========================================== */
+
+/* Smooth reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s var(--ease-out-expo);
+}
+
+/* Split text animation */
+.split-text .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+/* Magnetic button effect */
+.magnetic {
+    transition: transform 0.3s var(--ease-out-expo);
+}
+
+/* Velocity-based skew on scroll */
+[data-scroll-speed] {
+    will-change: transform;
+}

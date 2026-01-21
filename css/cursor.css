@@ -1,0 +1,32 @@
+/* ==========================================
+   Custom Cursor Styles
+   ========================================== */
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-text);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10001;
+    transition: transform 0.15s ease-out, background 0.15s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10002;
+    transform: translate(-50%, -50%);
+}
+
+.cursor.hover {
+    transform: translate(-50%, -50%) scale(2.5);
+    background: rgba(255, 77, 77, 0.1);
+    border-color: var(--color-accent);
+}

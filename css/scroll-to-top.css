@@ -1,0 +1,76 @@
+/* ==========================================
+   Scroll to Top Button Styles
+   ========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s var(--ease-out-expo);
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--color-text);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 30px;
+        right: 30px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-to-top svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-to-top svg {
+        width: 18px;
+        height: 18px;
+    }
+}
