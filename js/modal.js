@@ -170,14 +170,14 @@ document.addEventListener('DOMContentLoaded', function() {
             title: '특허법인 자주묻는질문 FAQ 페이지 기획·제작',
             category: 'CEO Staff',
             image: './img/questions.png',
-            background: '특허법인 고객들의 반복 문의를 줄이기 위해 체계적인 FAQ 페이지를 기획하고 제작했습니다.<br /><br />카테고리별 분류와 검색 기능을 통해 고객이 쉽게 정보를 찾을 수 있도록 했습니다.',
+            background: '특허법인 고객들의 반복 문의를 줄이기 위해 체계적인 FAQ 페이지를 기획하고 제작했습니다.<br /><br />카테고리별 분류와 tel: 기능을 통해 고객이 쉽게 접근할 수 있도록 했습니다.',
             results: [
-                '고객 문의 전화 35% 감소',
+                '해당 문의 고객 약 35% 감소',
                 '셀프 서비스 이용률 증가',
                 '고객 만족도 향상'
             ],
-            websiteUrl: '#',
-            pdfUrl: '#'
+            websiteUrl: 'https://jseongeon.github.io/teheranFQA/',
+            pdfUrl: 'https://drive.google.com/file/d/1qtzKzGrtEy89ZUZwCW1LwknqfnKZdWG6/view?usp=sharing'
         },
         kakaopay: {
             title: '카카오페이 UI·UX 개선 기획',
