@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 '청구서 이해도 향상',
                 '디자인 일관성 확보'
             ],
-            websiteUrl: '#',
-            pdfUrl: '#'
+            websiteUrl: 'https://jseongeon.github.io/invoiceCX/',
+            pdfUrl: 'https://drive.google.com/file/d/1cget5mZEjJAag_vXqlmjBgLfYYooffFI/view?usp=sharing'
         },
         process: {
             title: '업무 프로세스 개선 기획·실행',
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 '내부 만족도 30%에서 95%로 개선',
                 '표준 운영 절차(SOP) 매뉴얼 구축'
             ],
-            websiteUrl: '#',
+            websiteUrl: 'https://jseongeon.github.io/portfolio_patent_process/',
             pdfUrl: 'https://drive.google.com/file/d/1kkhHUAbCCQ_azZOnJnN7ybsUgnd7ShlC/view?usp=drive_link'
         },
         dataanalysis: {
@@ -163,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 '맞춤형 리타켓팅 캠페인 운영',
                 '고객 생애가치(LTV) 향상'
             ],
-            websiteUrl: '#',
-            pdfUrl: '#'
+            websiteUrl: 'https://jseongeon.github.io/remind-portfolio/',
+            pdfUrl: 'https://drive.google.com/file/d/1ogx_pdtXcAE33tnAhoXDi1-iZYfjSZU4/view?usp=sharing'
         },
         faq: {
             title: '특허법인 자주묻는질문 FAQ 페이지 기획·제작',
@@ -189,8 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 '개선된 UI/UX 프로토타입 제작',
                 '사용자 플로우 최적화 방안 제안'
             ],
-            websiteUrl: '#',
-            pdfUrl: '#'
+            websiteUrl: 'https://jseongeon.github.io/kakaoPortfolio/',
+            pdfUrl: 'https://drive.google.com/file/d/1bLqiZl0RSQDgnq-Cg3uttcLz1hyYtudT/view?usp=sharing'
         },
         lottegiants: {
             title: '롯데 자이언츠 3000만 관중 달성 이벤트 기획',
@@ -202,8 +202,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 '데이터 기반 전략 수립',
                 '중간평가 1위'
             ],
-            websiteUrl: '#',
-            pdfUrl: '#'
+            websiteUrl: 'https://jseongeon.github.io/Lotte-Giants-Project/',
+            pdfUrl: 'https://drive.google.com/file/d/1iQq2iKrEJ2Zc5GenPtnBmEaDN_738Own/view?usp=sharing'
         }
     };
 
