@@ -2,7 +2,7 @@
 // CONTACT MODAL FUNCTIONALITY
 // ==========================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('contactModal');
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function openModal() {
         if (modal) {
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // 스크롤 방지
+            document.body.style.overflow = 'hidden';
+            if (window.lenis) window.lenis.stop();
         }
     }
 
@@ -20,13 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeModal() {
         if (modal) {
             modal.classList.remove('active');
-            document.body.style.overflow = ''; // 스크롤 복원
+            document.body.style.overflow = '';
+            if (window.lenis) window.lenis.start();
         }
     }
 
     // 모달 열기 버튼 클릭
     if (openModalBtn) {
-        openModalBtn.addEventListener('click', function(e) {
+        openModalBtn.addEventListener('click', function (e) {
             e.preventDefault();
             openModal();
         });
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 오버레이 클릭 시 닫기
     if (modal) {
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 closeModal();
             }
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ESC 키로 닫기
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
             closeModal();
         }
@@ -55,9 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 폼 제출 처리
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // 폼 데이터 수집
             const formData = {
                 name: document.getElementById('name').value,
@@ -76,16 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 `문의 유형: ${formData.department}\n\n` +
                 `메시지:\n${formData.message}`
             );
-            
+
             // 실제 이메일 주소로 변경 필요
             const emailLink = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
-            
+
             // 새 창에서 이메일 클라이언트 열기
             window.location.href = emailLink;
-            
+
             // 폼 초기화
             contactForm.reset();
-            
+
             // 모달 닫기 (선택사항 - 이메일 클라이언트가 열리면 자동으로 닫힘)
             // closeModal();
         });
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // PROJECT MODAL FUNCTIONALITY
 // ==========================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 프로젝트 데이터
     const projectData = {
         dashboard: {
@@ -211,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectModal = document.getElementById('projectModal');
     const projectModalClose = document.getElementById('projectModalClose');
     const projectCards = document.querySelectorAll('.project-card[data-project]');
-    
+
     // 모달 내부 요소
     const modalImage = document.getElementById('projectModalImage');
     const modalCategory = document.getElementById('projectModalCategory');
@@ -232,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modalCategory.textContent = project.category;
         modalTitle.textContent = project.title;
         modalBackground.innerHTML = project.background;
-        
+
         // 성과 리스트 생성
         modalResults.innerHTML = '';
         project.results.forEach(result => {
@@ -266,6 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 모달 표시
         projectModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (window.lenis) window.lenis.stop();
     }
 
     // 프로젝트 모달 닫기
@@ -273,12 +276,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (projectModal) {
             projectModal.classList.remove('active');
             document.body.style.overflow = '';
+            if (window.lenis) window.lenis.start();
         }
     }
 
     // 프로젝트 카드 클릭 이벤트
     projectCards.forEach(card => {
-        card.addEventListener('click', function(e) {
+        card.addEventListener('click', function (e) {
             e.preventDefault();
             const projectId = this.dataset.project;
             openProjectModal(projectId);
@@ -292,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 오버레이 클릭 시 닫기
     if (projectModal) {
-        projectModal.addEventListener('click', function(e) {
+        projectModal.addEventListener('click', function (e) {
             if (e.target === projectModal) {
                 closeProjectModal();
             }
@@ -300,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ESC 키로 닫기
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && projectModal && projectModal.classList.contains('active')) {
             closeProjectModal();
         }
@@ -308,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 버튼 클릭 이벤트
     if (modalWebsite) {
-        modalWebsite.addEventListener('click', function(e) {
+        modalWebsite.addEventListener('click', function (e) {
             e.preventDefault();
             if (!this.classList.contains('disabled')) {
                 const url = this.getAttribute('href');
@@ -320,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (modalPdf) {
-        modalPdf.addEventListener('click', function(e) {
+        modalPdf.addEventListener('click', function (e) {
             e.preventDefault();
             if (!this.classList.contains('disabled')) {
                 const url = this.getAttribute('href');
@@ -330,4 +334,164 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+
+// ==========================================
+// ABOUT IMAGE MODAL (COVER LETTER) FUNCTIONALITY
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutImageTrigger = document.getElementById('aboutImageTrigger');
+    const aboutImageModal = document.getElementById('aboutImageModal');
+    const aboutImageModalClose = document.getElementById('aboutImageModalClose');
+    const aboutModalPdf = document.getElementById('aboutModalPdf');
+
+    // 모달 열기
+    function openAboutImageModal() {
+        if (aboutImageModal) {
+            aboutImageModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (window.lenis) window.lenis.stop();
+        }
+    }
+
+    // 모달 닫기
+    function closeAboutImageModal() {
+        if (aboutImageModal) {
+            aboutImageModal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (window.lenis) window.lenis.start();
+        }
+    }
+
+    // About 이미지 클릭 시 모달 열기
+    if (aboutImageTrigger) {
+        aboutImageTrigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            openAboutImageModal();
+        });
+    }
+
+    // 닫기 버튼 클릭
+    if (aboutImageModalClose) {
+        aboutImageModalClose.addEventListener('click', closeAboutImageModal);
+    }
+
+    // PDF 버튼 클릭
+    if (aboutModalPdf) {
+        aboutModalPdf.addEventListener('click', function (e) {
+            e.preventDefault();
+            const url = this.getAttribute('href');
+            if (url && url !== '#') {
+                window.open(url, '_blank');
+            }
+        });
+    }
+
+    // 오버레이 클릭 시 닫기
+    if (aboutImageModal) {
+        aboutImageModal.addEventListener('click', function (e) {
+            if (e.target === aboutImageModal) {
+                closeAboutImageModal();
+            }
+        });
+    }
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && aboutImageModal && aboutImageModal.classList.contains('active')) {
+            closeAboutImageModal();
+        }
+    });
+});
+
+
+// ==========================================
+// RESOURCE MODAL FUNCTIONALITY (이력서 / 경력기술서)
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    // 리소스 모달 설정
+    const resourceModals = {
+        resume: {
+            modal: document.getElementById('resumeModal'),
+            close: document.getElementById('resumeModalClose'),
+            pdf: document.getElementById('resumeModalPdf')
+        },
+        career: {
+            modal: document.getElementById('careerModal'),
+            close: document.getElementById('careerModalClose'),
+            pdf: document.getElementById('careerModalPdf')
+        }
+    };
+
+    // 리소스 아이템 클릭 이벤트
+    const resourceItems = document.querySelectorAll('.resources-item[data-resource]');
+
+    function openResourceModal(resourceId) {
+        const config = resourceModals[resourceId];
+        if (!config || !config.modal) return;
+
+        config.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (window.lenis) window.lenis.stop();
+    }
+
+    function closeResourceModal(resourceId) {
+        const config = resourceModals[resourceId];
+        if (!config || !config.modal) return;
+
+        config.modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (window.lenis) window.lenis.start();
+    }
+
+    // 리소스 아이템 클릭
+    resourceItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const resourceId = this.dataset.resource;
+            openResourceModal(resourceId);
+        });
+    });
+
+    // 각 모달의 닫기 버튼, 오버레이 클릭, PDF 버튼 이벤트
+    Object.keys(resourceModals).forEach(key => {
+        const config = resourceModals[key];
+
+        // 닫기 버튼
+        if (config.close) {
+            config.close.addEventListener('click', function () {
+                closeResourceModal(key);
+            });
+        }
+
+        // 오버레이 클릭
+        if (config.modal) {
+            config.modal.addEventListener('click', function (e) {
+                if (e.target === config.modal) {
+                    closeResourceModal(key);
+                }
+            });
+        }
+
+        // PDF 버튼
+        if (config.pdf) {
+            config.pdf.addEventListener('click', function (e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                if (url && url !== '#') {
+                    window.open(url, '_blank');
+                }
+            });
+        }
+
+        // ESC 키로 닫기
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && config.modal && config.modal.classList.contains('active')) {
+                closeResourceModal(key);
+            }
+        });
+    });
 });

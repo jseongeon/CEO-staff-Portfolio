@@ -12,7 +12,7 @@
 
 .resources-item {
     display: grid;
-    grid-template-columns: 100px 1fr 300px;
+    grid-template-columns: 100px 1fr auto;
     gap: 60px;
     align-items: center;
     padding: 50px 0;
@@ -42,8 +42,19 @@
     color: var(--color-accent);
 }
 
-.resources-description {
-    font-size: 0.95rem;
+.resources-arrow {
+    display: flex;
+    align-items: center;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.resources-arrow svg {
+    width: clamp(32px, 4vw, 48px);
+    height: clamp(32px, 4vw, 48px);
+}
+
+.resources-item:hover .resources-arrow {
+    color: var(--color-accent);
+    transform: translateX(6px);
 }

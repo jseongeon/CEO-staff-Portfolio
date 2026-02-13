@@ -266,14 +266,15 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     z-index: 10000;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
     padding: 40px 20px;
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .project-modal-overlay.active {
@@ -284,16 +285,16 @@
 .project-modal {
     width: 100%;
     max-width: 580px;
+    margin: auto;
     background: #1a1a1a;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     position: relative;
     transform: scale(0.95) translateY(30px);
     transition: transform 0.5s var(--ease-out-expo);
-    max-height: 85vh;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
 .project-modal-overlay.active .project-modal {
@@ -353,6 +354,15 @@
     height: 60px;
     background: linear-gradient(to top, #1a1a1a, transparent);
     pointer-events: none;
+}
+
+/* 이미지 잘림 없이 축소하여 전체 표시 */
+.project-modal-image--contain {
+    background: #111;
+}
+
+.project-modal-image--contain img {
+    object-fit: contain;
 }
 
 /* 모달 콘텐츠 영역 */
