@@ -112,8 +112,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 '데이터 기반 의사결정 시간 50% 단축',
                 '주요 지표 시각화로 경영진 보고 효율화'
             ],
-            websiteUrl: 'https://jseongeon.github.io/teheran-dashboard/',
+            websiteUrl: 'https://jseongeon.github.io/teheran-dashboard-mockup/',
             websiteText: '대시보드 가기',
+            websiteSubText: '(목업 데이터 사이트 제공)',
             pdfUrl: 'https://drive.google.com/file/d/1E7Gx9rxotHPo3bwrVOl0jZL5CtZ1BvnC/view?usp=sharing'
         },
         bill: {
@@ -263,6 +264,18 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             modalPdf.href = '#';
             modalPdf.classList.add('disabled');
+        }
+
+        // 웹사이트 보조 텍스트 처리
+        const buttonsContainer = document.querySelector('#projectModal .project-modal-buttons');
+        const existingSubText = buttonsContainer.querySelector('.project-modal-btn-subtext');
+        if (existingSubText) existingSubText.remove();
+
+        if (project.websiteSubText) {
+            const subText = document.createElement('p');
+            subText.className = 'project-modal-btn-subtext';
+            subText.textContent = project.websiteSubText;
+            buttonsContainer.after(subText);
         }
 
         // 모달 표시

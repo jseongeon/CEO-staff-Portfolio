@@ -509,6 +509,14 @@
     transform: translateY(-2px);
 }
 
+/* 버튼 보조 텍스트 */
+.project-modal-btn-subtext {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: 8px;
+}
+
 /* 버튼 비활성화 */
 .project-modal-btn.disabled {
     opacity: 0.4;

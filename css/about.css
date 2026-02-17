@@ -69,8 +69,8 @@
 }
 
 .about-image .about-image-overlay svg {
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
     color: #fff;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
