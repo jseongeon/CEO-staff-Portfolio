@@ -207,6 +207,20 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             websiteUrl: 'https://jseongeon.github.io/Lotte-Giants-Project/',
             pdfUrl: 'https://drive.google.com/file/d/1iQq2iKrEJ2Zc5GenPtnBmEaDN_738Own/view?usp=sharing'
+        },
+        newsletter: {
+            title: '특허법인 뉴스레터 자동화 시스템 구축',
+            category: 'CEO Staff',
+            image: './img/workflow.png',
+            background: '매주 4시간 이상 소요되던 뉴스레터 수동 작업(뉴스 검색, 기사 선별, 요약 작성, 이메일 편집, 발송)을 n8n + Docker 기반으로 완전 자동화했습니다.<br /><br />담당자는 Google Sheets에서 체크박스를 클릭하는 것만으로(약 5분) 뉴스레터 발송이 완료됩니다.',
+            results: [
+                '자동화율 98% 달성 (수동 작업 5분, 나머지 전체 자동)',
+                '주간 업무 시간 4시간 → 5분으로 단축',
+                '기사당 카드뉴스 14장 자동 생성 (AI 2종 x 7장)',
+                '94개 노드, 4개 트리거로 구성된 완전 자동화 워크플로우 구축'
+            ],
+            websiteUrl: 'https://jseongeon.github.io/newsletter-automation/',
+            pdfUrl: 'https://drive.google.com/file/d/1w-P1Q9sGYBP_vtMy9iCyJfDHhAX8MqDj/view?usp=sharing'
         }
     };
 

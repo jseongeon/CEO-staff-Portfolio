@@ -14,9 +14,9 @@ gsap.to('.hero-video-container', {
     }
 });
 
-// About image parallax
-gsap.to('.parallax-img', {
-    yPercent: -20,
+// About image parallax (컨테이너 전체를 이동시켜 이미지 잘림 방지)
+gsap.to('.about-image', {
+    yPercent: -10,
     ease: 'none',
     scrollTrigger: {
         trigger: '.about',
