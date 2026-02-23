@@ -450,6 +450,21 @@ document.addEventListener('DOMContentLoaded', function () {
             modal: document.getElementById('careerModal'),
             close: document.getElementById('careerModalClose'),
             pdf: document.getElementById('careerModalPdf')
+        },
+        notion: {
+            modal: document.getElementById('notionModal'),
+            close: document.getElementById('notionModalClose'),
+            pdf: document.getElementById('notionModalWebsite')
+        },
+        gdrive: {
+            modal: document.getElementById('gdriveModal'),
+            close: document.getElementById('gdriveModalClose'),
+            pdf: document.getElementById('gdriveModalWebsite')
+        },
+        github: {
+            modal: document.getElementById('githubModal'),
+            close: document.getElementById('githubModalClose'),
+            pdf: document.getElementById('githubModalWebsite')
         }
     };
 
