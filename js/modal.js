@@ -26,6 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.classList.remove('active');
             document.body.style.overflow = '';
             if (window.lenis) window.lenis.start();
+
+            // 모달을 닫을 때 폼 상태 및 성공 메시지 초기화
+            if (contactForm) {
+                const formGroups = contactForm.querySelectorAll('.form-group');
+                formGroups.forEach(group => group.style.display = 'block');
+                const submitBtn = document.getElementById('submitBtn');
+                if (submitBtn) submitBtn.style.display = 'block';
+
+                const successMessage = document.getElementById('successMessage');
+                if (successMessage) successMessage.style.display = 'none';
+
+                contactForm.reset();
+            }
         }
     }
 
@@ -77,20 +90,37 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
+            // 연락처와 이메일 중 최소 하나는 입력했는지 검증
+            const phoneVal = phone1.value.trim() + phone2.value.trim() + phone3.value.trim();
+            const emailVal = document.getElementById('email-id').value.trim() + document.getElementById('email-domain').value.trim();
+
+            if (!phoneVal && !emailVal) {
+                alert("연락처 또는 이메일 중 하나는 반드시 입력해주세요.");
+                return;
+            }
+
             // 제출 버튼을 비활성화하고 로딩 텍스트 표시
-            const submitBtn = contactForm.querySelector('.submit-btn');
+            const submitBtn = document.getElementById('submitBtn');
             const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = '전송 중...';
             submitBtn.disabled = true;
 
             try {
-                // 폼 데이터 수집 (전화번호 3개 필드 병합)
-                const phoneCombined = `${document.getElementById('phone1').value}-${document.getElementById('phone2').value}-${document.getElementById('phone3').value}`;
+                // 폼 데이터 수집
+                let phoneCombined = '';
+                if (phoneVal) {
+                    phoneCombined = `${phone1.value}-${phone2.value}-${phone3.value}`;
+                }
+
+                let emailCombined = '';
+                if (emailVal) {
+                    emailCombined = `${document.getElementById('email-id').value}@${document.getElementById('email-domain').value}`;
+                }
 
                 const formData = {
                     name: document.getElementById('name').value,
                     phone: phoneCombined,
-                    email: document.getElementById('email-id').value + '@' + document.getElementById('email-domain').value,
+                    email: emailCombined,
                     department: document.getElementById('department').value,
                     message: document.getElementById('message').value,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp() // 서버 시간 기록
@@ -102,24 +132,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 'contacts'라는 컬렉션(테이블)에 데이터 추가
                 await db.collection("contacts").add(formData);
 
-                // 성공 알림 및 처리
-                alert("포지션 제안이 성공적으로 접수되었습니다. 감사합니다!");
-                contactForm.reset();
-                closeModal();
+                // 폼 입력 필드를 숨기고 인라인 성공 메시지 노출
+                const formGroups = contactForm.querySelectorAll('.form-group');
+                formGroups.forEach(group => group.style.display = 'none');
+                submitBtn.style.display = 'none';
+
+                const successMessage = document.getElementById('successMessage');
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+                }
 
             } catch (error) {
                 console.error("Error adding document: ", error);
 
-                // Firestore 관련 세부 오류 안내 (404 / 권한 등)
+                // Firestore 관련 세부 오류 안내
                 if (error.code === 'not-found' || (error.message && error.message.includes('404'))) {
                     alert("데이터베이스 연결 실패 (404): Firebase 콘솔에서 'Firestore Database'를 아직 생성하지 않았을 수 있습니다. Firestore를 생성해주세요.");
                 } else if (error.code === 'permission-denied') {
-                    alert("권한 거부: Firestore 보안 규칙 설정이 필요합니다.");
+                    alert("권한 거부: Firestore 보안 규칙 확인이 필요합니다.");
                 } else {
                     alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.\n상세: " + error.message);
                 }
-            } finally {
-                // 버튼 상태 원래대로 복구
+
+                // 에러 발생 시 버튼 원상 복구
                 submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
             }
