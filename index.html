@@ -1065,8 +1065,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">연락처</label>
-                    <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                    <label for="phone1">연락처</label>
+                    <div class="phone-group">
+                        <input type="tel" id="phone1" name="phone1" maxlength="3" placeholder="010" required
+                            autocomplete="off">
+                        <span class="separator">-</span>
+                        <input type="tel" id="phone2" name="phone2" maxlength="4" placeholder="0000" required
+                            autocomplete="off">
+                        <span class="separator">-</span>
+                        <input type="tel" id="phone3" name="phone3" maxlength="4" placeholder="0000" required
+                            autocomplete="off">
+                    </div>
                 </div>
 
                 <div class="form-group">

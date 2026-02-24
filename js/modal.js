@@ -58,6 +58,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // 연락처 자동 포커스 이동 기능
+    const phone1 = document.getElementById('phone1');
+    const phone2 = document.getElementById('phone2');
+    const phone3 = document.getElementById('phone3');
+
+    if (phone1 && phone2 && phone3) {
+        phone1.addEventListener('input', function () {
+            if (this.value.length >= 3) phone2.focus();
+        });
+        phone2.addEventListener('input', function () {
+            if (this.value.length >= 4) phone3.focus();
+        });
+    }
+
     // 폼 제출 처리 (Firebase에 저장)
     if (contactForm) {
         contactForm.addEventListener('submit', async function (e) {
@@ -70,10 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = true;
 
             try {
-                // 폼 데이터 수집
+                // 폼 데이터 수집 (전화번호 3개 필드 병합)
+                const phoneCombined = `${document.getElementById('phone1').value}-${document.getElementById('phone2').value}-${document.getElementById('phone3').value}`;
+
                 const formData = {
                     name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
+                    phone: phoneCombined,
                     email: document.getElementById('email-id').value + '@' + document.getElementById('email-domain').value,
                     department: document.getElementById('department').value,
                     message: document.getElementById('message').value,
@@ -93,7 +109,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             } catch (error) {
                 console.error("Error adding document: ", error);
-                alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+
+                // Firestore 관련 세부 오류 안내 (404 / 권한 등)
+                if (error.code === 'not-found' || (error.message && error.message.includes('404'))) {
+                    alert("데이터베이스 연결 실패 (404): Firebase 콘솔에서 'Firestore Database'를 아직 생성하지 않았을 수 있습니다. Firestore를 생성해주세요.");
+                } else if (error.code === 'permission-denied') {
+                    alert("권한 거부: Firestore 보안 규칙 설정이 필요합니다.");
+                } else {
+                    alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.\n상세: " + error.message);
+                }
             } finally {
                 // 버튼 상태 원래대로 복구
                 submitBtn.textContent = originalBtnText;

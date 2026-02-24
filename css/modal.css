@@ -129,17 +129,24 @@
     color: rgba(255, 255, 255, 0.4);
 }
 
-.email-group {
+.email-group,
+.phone-group {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.email-group input {
+.email-group input,
+.phone-group input {
     flex: 1;
 }
 
-.email-group span {
+.phone-group input {
+    text-align: center;
+}
+
+.email-group span,
+.phone-group .separator {
     color: var(--color-text-muted);
     font-size: 15px;
     font-weight: 500;
