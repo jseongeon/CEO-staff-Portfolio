@@ -2,6 +2,9 @@
 // CONTACT MODAL FUNCTIONALITY
 // ==========================================
 
+// Firebase SDK 설정 (v9 모듈 방식 대신 호환성이 좋은 CDN 스크립트 방식이 HTML에 추가되었습니다.)
+// 이 파일은 HTML에서 Firebase 스크립트가 로드된 이후에 실행됩니다.
+
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('contactModal');
     const openModalBtn = document.getElementById('openModalBtn');
@@ -55,41 +58,47 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // 폼 제출 처리
+    // 폼 제출 처리 (Firebase에 저장)
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-            // 폼 데이터 수집
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email-id').value + '@' + document.getElementById('email-domain').value,
-                department: document.getElementById('department').value,
-                message: document.getElementById('message').value
-            };
+            // 제출 버튼을 비활성화하고 로딩 텍스트 표시
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = '전송 중...';
+            submitBtn.disabled = true;
 
-            // 이메일 링크 생성 (mailto:)
-            const subject = encodeURIComponent(`[${formData.department}] ${formData.name}님의 문의`);
-            const body = encodeURIComponent(
-                `이름/회사명: ${formData.name}\n` +
-                `연락처: ${formData.phone}\n` +
-                `이메일: ${formData.email}\n` +
-                `문의 유형: ${formData.department}\n\n` +
-                `메시지:\n${formData.message}`
-            );
+            try {
+                // 폼 데이터 수집
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email-id').value + '@' + document.getElementById('email-domain').value,
+                    department: document.getElementById('department').value,
+                    message: document.getElementById('message').value,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp() // 서버 시간 기록
+                };
 
-            // 실제 이메일 주소로 변경 필요
-            const emailLink = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+                // 전역 firebase 객체에서 firestore 가져오기
+                const db = firebase.firestore();
 
-            // 새 창에서 이메일 클라이언트 열기
-            window.location.href = emailLink;
+                // 'contacts'라는 컬렉션(테이블)에 데이터 추가
+                await db.collection("contacts").add(formData);
 
-            // 폼 초기화
-            contactForm.reset();
+                // 성공 알림 및 처리
+                alert("포지션 제안이 성공적으로 접수되었습니다. 감사합니다!");
+                contactForm.reset();
+                closeModal();
 
-            // 모달 닫기 (선택사항 - 이메일 클라이언트가 열리면 자동으로 닫힘)
-            // closeModal();
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+            } finally {
+                // 버튼 상태 원래대로 복구
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     }
 });

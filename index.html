@@ -1165,6 +1165,26 @@
         </svg>
     </button>
 
+    <!-- Firebase SDK (호환성 버전 라이브러리 추가) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD09tbT85A9GwS63aVIKxrRhlyAhsLSnOU",
+            authDomain: "my-portfolio-2bf1d.firebaseapp.com",
+            projectId: "my-portfolio-2bf1d",
+            storageBucket: "my-portfolio-2bf1d.firebasestorage.app",
+            messagingSenderId: "803983439678",
+            appId: "1:803983439678:web:0e54a0adae0927fd6f1e6f",
+            measurementId: "G-DYJEJMS8YZ"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
     <!-- JavaScript Files -->
     <script src="js/common.js"></script>
     <script src="js/lenis-init.js"></script>
