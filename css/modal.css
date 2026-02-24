@@ -229,7 +229,7 @@
 .social-links a::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: calc(100% + 5px);
+    bottom: calc(100% + 5px);
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.8);
@@ -251,7 +251,7 @@
 .social-links a:hover::after {
     opacity: 1;
     visibility: visible;
-    top: calc(100% + 10px);
+    bottom: calc(100% + 10px);
 }
 
 /* 스크롤바 스타일링 */
