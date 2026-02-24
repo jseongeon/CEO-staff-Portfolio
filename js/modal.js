@@ -132,6 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 'contacts'라는 컬렉션(테이블)에 데이터 추가
                 await db.collection("contacts").add(formData);
 
+                // 전송 성공 시 버튼 텍스트 및 상태 원상 복구 (재열림 방지)
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+
                 // 폼 입력 필드를 숨기고 인라인 성공 메시지 노출
                 const formGroups = contactForm.querySelectorAll('.form-group');
                 formGroups.forEach(group => group.style.display = 'none');
