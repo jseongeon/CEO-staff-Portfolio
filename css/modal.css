@@ -212,6 +212,7 @@
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: none;
+    position: relative;
 }
 
 .social-links a:hover {
@@ -222,6 +223,33 @@
 .social-links svg {
     width: 20px;
     height: 20px;
+}
+
+/* 툴팁 (hover 시 텍스트 표시) */
+.social-links a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.social-links a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px;
 }
 
 /* 스크롤바 스타일링 */
@@ -248,7 +276,7 @@
     .modal-container {
         padding: 32px 24px;
     }
-    
+
     .modal-title {
         font-size: 22px;
     }
@@ -550,19 +578,19 @@
         border-radius: 20px;
         margin: 20px;
     }
-    
+
     .project-modal-content {
         padding: 24px 28px 32px;
     }
-    
+
     .project-modal-title {
         font-size: 24px;
     }
-    
+
     .project-modal-buttons {
         flex-direction: column;
     }
-    
+
     .project-modal-btn {
         width: 100%;
     }
@@ -572,21 +600,21 @@
     .project-modal-overlay {
         padding: 16px;
     }
-    
+
     .project-modal {
         margin: 0;
         max-height: 95vh;
     }
-    
+
     .project-modal-content {
         padding: 20px 24px 28px;
     }
-    
+
     .project-modal-title {
         font-size: 22px;
         margin-bottom: 24px;
     }
-    
+
     .project-modal-section-content,
     .project-modal-results li {
         font-size: 15px;
