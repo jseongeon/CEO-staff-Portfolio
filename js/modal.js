@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            if (window.lenis) window.lenis.stop();
         }
     }
 
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (modal) {
             modal.classList.remove('active');
             document.body.style.overflow = '';
-            if (window.lenis) window.lenis.start();
+
 
             // 모달을 닫을 때 폼 상태 및 성공 메시지 초기화
             if (contactForm) {
@@ -367,7 +366,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // 모달 표시
         projectModal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        if (window.lenis) window.lenis.stop();
     }
 
     // 프로젝트 모달 닫기
@@ -375,7 +373,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (projectModal) {
             projectModal.classList.remove('active');
             document.body.style.overflow = '';
-            if (window.lenis) window.lenis.start();
         }
     }
 
@@ -451,7 +448,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (aboutImageModal) {
             aboutImageModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            if (window.lenis) window.lenis.stop();
         }
     }
 
@@ -460,7 +456,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (aboutImageModal) {
             aboutImageModal.classList.remove('active');
             document.body.style.overflow = '';
-            if (window.lenis) window.lenis.start();
         }
     }
 
@@ -549,7 +544,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         config.modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        if (window.lenis) window.lenis.stop();
     }
 
     function closeResourceModal(resourceId) {
@@ -558,7 +552,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         config.modal.classList.remove('active');
         document.body.style.overflow = '';
-        if (window.lenis) window.lenis.start();
     }
 
     // 리소스 아이템 클릭
