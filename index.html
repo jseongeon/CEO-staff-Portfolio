@@ -99,11 +99,30 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-video-container" data-scroll-speed="0.5">
-            <video class="hero-video" autoplay muted loop playsinline>
+            <video class="hero-video" autoplay muted loop playsinline webkit-playsinline="true" preload="auto">
                 <source
                     src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4"
                     type="video/mp4">
             </video>
+            <script>
+                // 모바일 자동재생 차단 방어 로직
+                document.addEventListener("DOMContentLoaded", function () {
+                    var video = document.querySelector(".hero-video");
+                    if (video) {
+                        var playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(function (error) {
+                                console.log("자동재생 차단됨. 사용자의 첫 터치에 재생을 시도합니다.");
+                                // 자동재생이 차단된 경우, 사용자가 화면을 터치하면 바로 재생
+                                document.body.addEventListener('touchstart', function playOnFirstTouch() {
+                                    video.play();
+                                    document.body.removeEventListener('touchstart', playOnFirstTouch);
+                                }, { once: true });
+                            });
+                        }
+                    }
+                });
+            </script>
         </div>
         <div class="hero-content">
             <h1 class="hero-title">
