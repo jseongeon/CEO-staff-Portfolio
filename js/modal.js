@@ -297,11 +297,12 @@ document.addEventListener('DOMContentLoaded', function () {
             title: '업무사례 자동화 시스템 구축',
             category: 'Project',
             image: './img/workflow.png',
-            background: '사내 업무 효율화를 위해 구축한 업무사례 자동화 시스템 프로젝트입니다.',
+            background: 'KIPRIS(특허청 데이터베이스)의 신규 등록 데이터를 자동으로 수집하여 AI로 분석하고 콘텐츠화하여 홈페이지에 게시하는 전 과정을 완전 자동화했습니다.<br /><br />n8n과 Supabase를 활용하여 데이터 파이프라인을 구축하고, 80시간 이상 소요되던 누적 업무를 1시간 30분 이내로 단축해 40배 이상의 업무 효율 향상을 달성했습니다.',
             results: [
-                '업무 사례 자동화 파이프라인 전개',
-                '입력부터 배포까지 매끄러운 플로우 구현',
-                '반응형 및 동적 UI/UX 적용'
+                '자동화율 98% 달성 (수동 작업 5분, 나머지 9개 스텝 전체 자동)',
+                '연간 80시간 이상 소요되던 수작업을 1시간 30분 이내로 단축',
+                'KIPRIS 실시간 연동, GPT/Gemini AI를 활용한 기술 요약 자동 생성',
+                'n8n 워크플로우 2개, Supabase DB를 연동한 자동화 시스템 구축'
             ],
             websiteUrl: 'https://jseongeon.github.io/case-auto/',
             pdfUrl: 'https://drive.google.com/file/d/1L4RQo38uAsnMo4b4FizKyaodK6wxI2d_/view?usp=sharing'
