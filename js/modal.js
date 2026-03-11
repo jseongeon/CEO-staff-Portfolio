@@ -292,6 +292,19 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             websiteUrl: 'https://jseongeon.github.io/newsletter-automation/',
             pdfUrl: 'https://drive.google.com/file/d/1w-P1Q9sGYBP_vtMy9iCyJfDHhAX8MqDj/view?usp=sharing'
+        },
+        'case-auto': {
+            title: '업무사례 자동화 시스템 구축',
+            category: 'Project',
+            image: './img/workflow.png',
+            background: '사내 업무 효율화를 위해 구축한 업무사례 자동화 시스템 프로젝트입니다.',
+            results: [
+                '업무 사례 자동화 파이프라인 전개',
+                '입력부터 배포까지 매끄러운 플로우 구현',
+                '반응형 및 동적 UI/UX 적용'
+            ],
+            websiteUrl: 'https://jseongeon.github.io/case-auto/',
+            pdfUrl: 'https://drive.google.com/file/d/1L4RQo38uAsnMo4b4FizKyaodK6wxI2d_/view?usp=sharing'
         }
     };
 
